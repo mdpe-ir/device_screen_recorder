@@ -18,7 +18,7 @@ import com.hbisoft.hbrecorder.HBRecorder
 import io.flutter.app.FlutterApplication
 
 /** ScreenRecorderPlugin */
-class ScreenRecorderPlugin() : FlutterPlugin, MethodCallHandler, HBRecorderListener, PluginRegistry.ActivityResultListener {
+class ScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderListener, PluginRegistry.ActivityResultListener {
     /// The MethodChannel that will the communication between Flutter and native Android
     ///
     /// This local reference serves to register the plugin with the Flutter Engine and unregister it
