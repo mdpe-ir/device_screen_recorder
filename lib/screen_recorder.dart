@@ -14,4 +14,9 @@ class ScreenRecorder {
     final bool? version = await _channel.invokeMethod('startRecordScreen');
     return version;
   }
+
+  static Future<bool?> get stopRecordScreen async {
+    final bool? version = await _channel.invokeMethod('stopRecordScreen');
+    return version;
+  }
 }
