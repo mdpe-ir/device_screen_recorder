@@ -1,4 +1,4 @@
-group 'ru.kodazm.screen_recorder'
+group 'ru.kodazm.device_screen_recorder'
 version '1.0-SNAPSHOT'
 
 buildscript {

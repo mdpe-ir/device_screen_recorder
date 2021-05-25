@@ -1,4 +1,4 @@
-package ru.kodazm.screen_recorder
+package ru.kodazm.device_screen_recorder
 
 import android.app.Activity
 import android.content.Context
@@ -19,7 +19,7 @@ import com.hbisoft.hbrecorder.HBRecorderListener
 import com.hbisoft.hbrecorder.HBRecorder
 
 /** ScreenRecorderPlugin */
-class ScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderListener, ActivityAware, PluginRegistry.ActivityResultListener {
+class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderListener, ActivityAware, PluginRegistry.ActivityResultListener {
     private lateinit var channel: MethodChannel
     private var recorder: HBRecorder? = null
     private lateinit var context: Context

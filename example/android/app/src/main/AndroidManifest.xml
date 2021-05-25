@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ru.kodazm.screen_recorder_example">
+    package="ru.kodazm.device_screen_recorder_example">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
    <application
-        android:label="screen_recorder_example"
+        android:label="device_screen_recorder_example"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

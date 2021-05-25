@@ -1,9 +1,9 @@
 import Flutter
 import UIKit
 
-public class SwiftScreenRecorderPlugin: NSObject, FlutterPlugin {
+public class SwiftDeviceScreenRecorderPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "screen_recorder", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "device_screen_recorder", binaryMessenger: registrar.messenger())
     let instance = SwiftScreenRecorderPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
