@@ -9,7 +9,11 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
+      if (methodCall.method == 'startRecordScreen') {
+        return true;
+      } else if (methodCall.method == 'stopRecordScreen') {
+        return 'path';
+      }
     });
   });
 
@@ -17,7 +21,11 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await ScreenRecorder.platformVersion, '42');
+  test('startRecordScreen', () async {
+    expect(await ScreenRecorder.startRecordScreen(), true);
+  });
+
+  test('stopRecordScreen', () async {
+    expect(await ScreenRecorder.stopRecordScreen(), 'path');
   });
 }

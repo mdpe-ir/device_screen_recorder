@@ -2,6 +2,7 @@ name: screen_recorder
 description: A Flutter plugin for record the screen. This plug-in requires Android SDK 21+ and iOS 10+
 version: 0.0.1
 homepage:
+repository: https://github.com/akovardin/screen_recorder
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
