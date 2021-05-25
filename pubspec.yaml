@@ -1,5 +1,5 @@
 name: screen_recorder
-description: A new Flutter project.
+description: A Flutter plugin for record the screen. This plug-in requires Android SDK 21+ and iOS 10+
 version: 0.0.1
 homepage:
 
@@ -29,8 +29,8 @@ flutter:
       android:
         package: ru.kodazm.screen_recorder
         pluginClass: ScreenRecorderPlugin
-      ios:
-        pluginClass: ScreenRecorderPlugin
+#      ios:
+#        pluginClass: ScreenRecorderPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

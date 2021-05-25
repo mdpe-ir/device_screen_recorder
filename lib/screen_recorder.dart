@@ -10,13 +10,13 @@ class ScreenRecorder {
     return version;
   }
 
-  static Future<bool?> get startRecordScreen async {
-    final bool? version = await _channel.invokeMethod('startRecordScreen');
+  static Future<bool?> startRecordScreen({String? name}) async {
+    final bool? version = await _channel.invokeMethod('startRecordScreen', {"name": name});
     return version;
   }
 
-  static Future<bool?> get stopRecordScreen async {
-    final bool? version = await _channel.invokeMethod('stopRecordScreen');
-    return version;
+  static Future<String?> stopRecordScreen() async {
+    final String? path = await _channel.invokeMethod('stopRecordScreen');
+    return path;
   }
 }

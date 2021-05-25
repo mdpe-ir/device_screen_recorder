@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:screen_recorder/screen_recorder.dart';
 
 void main() {
@@ -14,33 +11,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  bool recording = false;
+  String path = '';
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion = await ScreenRecorder.platformVersion ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override
@@ -52,20 +28,31 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Running on: $_platformVersion\n'),
-              OutlinedButton(
-                onPressed: () async {
-                  await ScreenRecorder.startRecordScreen;
-                },
-                child: Text('start'),
-              ),
-              OutlinedButton(
-                onPressed: () async {
-                  await ScreenRecorder.stopRecordScreen;
-                },
-                child: Text('stop'),
-              )
+              recording
+                  ? OutlinedButton(
+                      onPressed: () async {
+                        var file = await ScreenRecorder.stopRecordScreen();
+                        setState(() {
+                          path = file ?? '';
+                          recording = false;
+                        });
+                      },
+                      child: Text('Stop'),
+                    )
+                  : OutlinedButton(
+                      onPressed: () async {
+                        var status = await ScreenRecorder.startRecordScreen();
+                        // var status = await ScreenRecorder.startRecordScreen(name: 'example');
+                        setState(() {
+                          recording = status ?? false;
+                        });
+                      },
+                      child: Text('Start'),
+                    ),
+              Text(path)
             ],
           ),
         ),
