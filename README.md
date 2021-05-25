@@ -1,4 +1,4 @@
-# screen_recorder
+# device_screen_recorder
 
 A Flutter plugin for record the screen based on [HBRecorder](https://github.com/HBiSoft/HBRecorder). This plug-in requires Android SDK 21+
 
