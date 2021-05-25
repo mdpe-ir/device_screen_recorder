@@ -29,9 +29,8 @@ class ScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderListene
 
     private val SCREEN_RECORD_REQUEST_CODE = 333;
 
-    // ActivityAware
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "screen_recorder")
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "device_screen_recorder")
         channel.setMethodCallHandler(this)
         context = flutterPluginBinding.applicationContext
     }
@@ -40,6 +39,7 @@ class ScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderListene
         channel.setMethodCallHandler(null)
     }
 
+    // ActivityAware
     override fun onDetachedFromActivity() {
     }
 

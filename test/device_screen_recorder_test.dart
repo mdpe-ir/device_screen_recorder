@@ -1,9 +1,9 @@
+import 'package:device_screen_recorder/device_screen_recorder.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:screen_recorder/screen_recorder.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('screen_recorder');
+  const MethodChannel channel = MethodChannel('device_screen_recorder');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -22,10 +22,10 @@ void main() {
   });
 
   test('startRecordScreen', () async {
-    expect(await ScreenRecorder.startRecordScreen(), true);
+    expect(await DeviceScreenRecorder.startRecordScreen(), true);
   });
 
   test('stopRecordScreen', () async {
-    expect(await ScreenRecorder.stopRecordScreen(), 'path');
+    expect(await DeviceScreenRecorder.stopRecordScreen(), 'path');
   });
 }

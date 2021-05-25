@@ -1,5 +1,5 @@
+import 'package:device_screen_recorder/device_screen_recorder.dart';
 import 'package:flutter/material.dart';
-import 'package:screen_recorder/screen_recorder.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
               recording
                   ? OutlinedButton(
                       onPressed: () async {
-                        var file = await ScreenRecorder.stopRecordScreen();
+                        var file = await DeviceScreenRecorder.stopRecordScreen();
                         setState(() {
                           path = file ?? '';
                           recording = false;
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
                     )
                   : OutlinedButton(
                       onPressed: () async {
-                        var status = await ScreenRecorder.startRecordScreen();
+                        var status = await DeviceScreenRecorder.startRecordScreen();
                         // var status = await ScreenRecorder.startRecordScreen(name: 'example');
                         setState(() {
                           recording = status ?? false;
