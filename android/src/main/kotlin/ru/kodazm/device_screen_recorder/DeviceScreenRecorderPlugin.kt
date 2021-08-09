@@ -64,8 +64,10 @@ class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderL
                 if (name != "") {
                     recorder?.fileName = name
                 }
-                recorder?.isAudioEnabled(false)
-                recorder?.recordHDVideo(true);
+//                 recorder?.isAudioEnabled(false)
+//                 recorder?.recordHDVideo(true);
+                recorder?.isAudioEnabled(true)
+                recorder?.recordHDVideo(false);
                 recorder?.startScreenRecording(data, resultCode, activity)
             }
         }
