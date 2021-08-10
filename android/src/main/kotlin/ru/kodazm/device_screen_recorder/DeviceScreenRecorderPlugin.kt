@@ -18,7 +18,6 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 import com.hbisoft.hbrecorder.HBRecorderListener
 import com.hbisoft.hbrecorder.HBRecorder
 
-
 /** ScreenRecorderPlugin */
 class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderListener, ActivityAware, PluginRegistry.ActivityResultListener {
     private lateinit var channel: MethodChannel
@@ -65,11 +64,8 @@ class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderL
                 if (name != "") {
                     recorder?.fileName = name
                 }
-//                 recorder?.isAudioEnabled(false)
-//                 recorder?.recordHDVideo(true);
-                recorder?.isAudioEnabled(true)
-//                 recorder?.setAudioSource("REMOTE_SUBMIX");
-                recorder?.recordHDVideo(false);
+                recorder?.isAudioEnabled(false)
+                recorder?.recordHDVideo(true);
                 recorder?.startScreenRecording(data, resultCode, activity)
             }
         }
