@@ -1,5 +1,5 @@
 package ru.kodazm.device_screen_recorder
-
+import android.media.MediaRecorder
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
