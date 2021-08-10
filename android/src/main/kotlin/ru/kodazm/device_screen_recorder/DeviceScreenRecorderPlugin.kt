@@ -67,7 +67,7 @@ class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderL
 //                 recorder?.isAudioEnabled(false)
 //                 recorder?.recordHDVideo(true);
                 recorder?.isAudioEnabled(true)
-                recorder?.setAudioSource(MediaRecorder.AudioSource.REMOTE_SUBMIX);
+                recorder?.setAudioSource("REMOTE_SUBMIX");
                 recorder?.recordHDVideo(false);
                 recorder?.startScreenRecording(data, resultCode, activity)
             }
