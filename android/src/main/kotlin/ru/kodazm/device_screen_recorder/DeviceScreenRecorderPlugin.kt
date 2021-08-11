@@ -23,7 +23,8 @@ class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderL
     private lateinit var channel: MethodChannel
     private var recorder: HBRecorder? = null
     private lateinit var context: Context
-    private lateinit var activity: Activity
+//     private lateinit var activity: Activity
+    private  var activity: Activity? = null
     private val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).absolutePath + File.separator
     private var name: String? = ""
 
