@@ -25,7 +25,7 @@ class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderL
     private lateinit var context: Context
     private lateinit var activity: Activity
 //     private  var activity: Activity? = null
-    private val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).absolutePath + File.separator
+    private val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).absolutePath + File.separator +"Instamoon" + File.separator
     private var name: String? = ""
 
     private val SCREEN_RECORD_REQUEST_CODE = 333;
