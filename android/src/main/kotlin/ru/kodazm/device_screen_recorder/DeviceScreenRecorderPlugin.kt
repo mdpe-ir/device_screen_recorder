@@ -78,7 +78,8 @@ class DeviceScreenRecorderPlugin : FlutterPlugin, MethodCallHandler, HBRecorderL
             result.success("Android ${android.os.Build.VERSION.RELEASE}")
         } else if (call.method == "startRecordScreen") {
             var name = call.argument<String?>("name")
-            startRecordScreen(name)
+            var path = call.argument<String?>("path")
+            startRecordScreen(name  , path)
             result.success(true)
         } else if (call.method == "stopRecordScreen") {
             var path = stopRecordScreen()
